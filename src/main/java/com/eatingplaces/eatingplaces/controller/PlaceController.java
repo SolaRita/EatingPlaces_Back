@@ -2,41 +2,39 @@ package com.eatingplaces.eatingplaces.controller;
 
 
 
-import com.eatingplaces.eatingplaces.model.Restaurant;
-import com.eatingplaces.eatingplaces.repository.RestaurantRepository;
-import com.eatingplaces.eatingplaces.service.RestaurantService;
+import com.eatingplaces.eatingplaces.model.Place;
+import com.eatingplaces.eatingplaces.service.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/restaurants")
 
 @CrossOrigin
-public class RestaurantController {
+public class PlaceController {
 
     @Autowired()
-    private RestaurantService restaurantService;
+    private PlaceService placeService;
 
 
     @PostMapping("/")
-    public String add(@RequestBody Restaurant restaurant) {
-        restaurantService.saveRestaurant(restaurant);
+    public String add(@RequestBody Place place) {
+        placeService.savePlace(place);
         return "new restaurant is added";
     }
 
 
     @GetMapping("/restaurants")
-    public List<Restaurant> getAllRestaurants() {
-        return restaurantService.getAllRestaurants();
+    public List<Place> getAllPlaces() {
+        return placeService.getAllPlaces();
     }
 
 
     @GetMapping("/{id}")
-    public Restaurant getRestaurantById(@PathVariable Long id){
-        return restaurantService.getRestaurantById(id);
+    public Place getPlaceById(@PathVariable Long id){
+        return placeService.getPlaceById(id);
 
     }
 /*

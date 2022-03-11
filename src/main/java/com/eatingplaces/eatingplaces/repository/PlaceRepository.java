@@ -1,10 +1,10 @@
 package com.eatingplaces.eatingplaces.repository;
 
-import com.eatingplaces.eatingplaces.model.Restaurant;
+import com.eatingplaces.eatingplaces.model.Place;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface RestaurantRepository extends JpaRepository <Restaurant, Long> {
+public interface PlaceRepository extends JpaRepository <Place, Long> {
 }

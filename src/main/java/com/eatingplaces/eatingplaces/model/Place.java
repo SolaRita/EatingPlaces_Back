@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class Restaurant {
+public class Place {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
 
