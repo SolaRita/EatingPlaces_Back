@@ -27,10 +27,18 @@ public class RestaurantController {
         return "new restaurant is added";
     }
 
-<<<<<<< HEAD
 
-    @GetMapping()
-=======
+    @GetMapping("/restaurants")
+    public List<Restaurant> getAllRestaurants() {
+        return restaurantService.getAllRestaurants();
+    }
+
+
+    @GetMapping("/{id}")
+    public Restaurant getRestaurantById(@PathVariable Long id){
+        return restaurantService.getRestaurantById(id);
+
+    }
 /*
    @GetMapping("/{id}")
     RestaurantResponseDTO getById(@PathVariable Long id) {
@@ -40,19 +48,5 @@ public class RestaurantController {
 
     }
 */
-
-
-    @GetMapping("/restaurants")
->>>>>>> component_cardplace
-    public List<Restaurant> getAllRestaurants() {
-        return restaurantService.getAllRestaurants();
-    }
-/*    @GetMapping("/{id}")
-
-    public Restaurant getRestaurantById(){
-        return restaurantService.getRestaurantById();
-
-    }*/
-
 
 }
