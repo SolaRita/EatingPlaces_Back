@@ -9,13 +9,11 @@ import static org.hamcrest.Matchers.hasProperty;
 
 class PlaceTest {
     @Test
-    void RestaurantHaveId(){
-     Place restaurant = new Place();
-     assertThat(restaurant,hasProperty("id"));
-
-
-
+    void PlaceHaveId(){
+     Place place = new Place();
+     assertThat(place,hasProperty("id"));
     }
+
 
 
 

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/restaurants")
+@RequestMapping("/places")
 
 @CrossOrigin
 public class PlaceController {
@@ -19,14 +19,14 @@ public class PlaceController {
     private PlaceService placeService;
 
 
-    @PostMapping("/")
+    @PostMapping("")
     public String add(@RequestBody Place place) {
         placeService.savePlace(place);
         return "new restaurant is added";
     }
 
 
-    @GetMapping("/restaurants")
+    @GetMapping("")
     public List<Place> getAllPlaces() {
         return placeService.getAllPlaces();
     }
