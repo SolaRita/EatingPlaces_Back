@@ -1,6 +1,5 @@
 package com.eatingplaces.eatingplaces.service;
 import com.eatingplaces.eatingplaces.model.Place;
-
 import java.util.List;
 
 

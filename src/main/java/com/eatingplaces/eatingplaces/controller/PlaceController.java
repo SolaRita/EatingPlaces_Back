@@ -1,7 +1,4 @@
 package com.eatingplaces.eatingplaces.controller;
-
-
-
 import com.eatingplaces.eatingplaces.model.Place;
 import com.eatingplaces.eatingplaces.service.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +32,6 @@ public class PlaceController {
     @GetMapping("/{id}")
     public Place getPlaceById(@PathVariable Long id){
         return placeService.getPlaceById(id);
-
     }
 /*
    @GetMapping("/{id}")

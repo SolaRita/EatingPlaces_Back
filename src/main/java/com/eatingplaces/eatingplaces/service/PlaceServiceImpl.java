@@ -1,10 +1,8 @@
 package com.eatingplaces.eatingplaces.service;
-
 import com.eatingplaces.eatingplaces.model.Place;
 import com.eatingplaces.eatingplaces.repository.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
