@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface CategoryService {
     public Category saveCategory (Category category);
-    public List<Category> getAllCategorys();
+    public List<Category> getAllCategories();
     public Category getCategoryById (Long id);
 
 

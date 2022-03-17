@@ -14,7 +14,7 @@ public class CategoryServiceImpl implements CategoryService {
     public Category saveCategory (Category category) {return categoryRepository.save(category);}
 
     @Override
-    public List<Category> getAllCategorys(){return categoryRepository.findAll();}
+    public List<Category> getAllCategories(){return categoryRepository.findAll();}
 
     @Override
     public Category getCategoryById (Long id) {return categoryRepository.findById(id).get();}
