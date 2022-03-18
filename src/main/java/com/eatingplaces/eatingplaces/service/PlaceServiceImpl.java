@@ -1,4 +1,5 @@
 package com.eatingplaces.eatingplaces.service;
+import com.eatingplaces.eatingplaces.model.Category;
 import com.eatingplaces.eatingplaces.model.Place;
 import com.eatingplaces.eatingplaces.repository.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class PlaceServiceImpl implements PlaceService {
 
     @Override
     public Place getPlaceById(Long id) {return placeRepository.findById(id).get();}
+
+    @Override
+    public List<Place> getAllPlacesByCategory(Category category){return placeRepository.findAllByCategory(category);}
 
 
 }
