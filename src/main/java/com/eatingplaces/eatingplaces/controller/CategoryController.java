@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/category")
+@RequestMapping("/categories")
 
 @CrossOrigin
 public class CategoryController {
