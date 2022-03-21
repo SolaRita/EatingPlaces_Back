@@ -1,6 +1,8 @@
 package com.eatingplaces.eatingplaces.controller;
 import com.eatingplaces.eatingplaces.model.Category;
+import com.eatingplaces.eatingplaces.model.Place;
 import com.eatingplaces.eatingplaces.service.CategoryService;
+import com.eatingplaces.eatingplaces.service.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,19 +17,20 @@ public class CategoryController {
 
     @Autowired()
     private CategoryService categoryService;
+    @Autowired()
+    private PlaceService placeService;
 
     @GetMapping("")
     public List<Category> getAllCategories() {
         return categoryService.getAllCategories();
     }
 
-   /* @GetMapping("/barcelona")
-    public List<Category> getAllCategoriesBarcelona() {
-        return categoryService.getAllCategoriesBarcelona();
-    }*/
     @GetMapping("/{id}")
     public Category getCategoryById(@PathVariable Long id){
         return categoryService.getCategoryById(id);
     }
 
+    @GetMapping("/{category}/places")
+    public List<Place>getAllPlacesByCategory(@PathVariable Category category) {return placeService.getAllPlacesByCategory(category);
+    }
 }
