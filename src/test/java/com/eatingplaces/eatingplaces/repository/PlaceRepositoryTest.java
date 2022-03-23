@@ -17,8 +17,12 @@ class PlaceRepositoryTest {
     @Autowired
     PlaceRepository placeRepository;
 
+
+
+
+/*
     @Test
-    void findAllPlacesRetrunsAllPlacesList(){
+    void findAllPlacesReturnsAllPlacesList(){
         var place = new Place();
         entityManager.persist(place);
         entityManager.flush();
@@ -26,6 +30,7 @@ class PlaceRepositoryTest {
         assertEquals(10, placeRepository.findAll().size());
         assertEquals(place, placeRepository.findAll().get(0));
     }
+*/
 
 
 
