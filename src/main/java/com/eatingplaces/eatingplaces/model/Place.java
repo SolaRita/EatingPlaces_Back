@@ -9,10 +9,10 @@ import java.util.List;
 @Data
 public class Place {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String name;
     @ManyToOne
     private City city;
@@ -24,8 +24,7 @@ public class Place {
     private String price;
     private String doNotMiss;
     private String highlight;
-
-    }
+}
 
 
 
