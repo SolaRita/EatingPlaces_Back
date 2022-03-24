@@ -11,7 +11,10 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
@@ -32,15 +35,18 @@ class PlaceServiceImplTest {
     void setUp(){
         MockitoAnnotations.openMocks(this);
         place = new Place();
-        place.setId(new Long(1));
+        place.setId(1L);
         place.setName("Pepito");
+        category = new Category( 1L, "Bonito");
 
-/*        ArrayList<Category> categoryList = new ArrayList<>();
-        categoryList.add(new Category( 1, "Bonito"));
-        categoryList.add(new Category( 2, "Barato"));*/
+       ArrayList<Category> categoryList = new ArrayList<>();
+        categoryList.add(new Category( 1L, "Bonito"));
+        categoryList.add(new Category( 2L, "Barato"));
+
 
 
     }
+
     @Test
     void testWhenCallGetAllPlacesReturnAllPlacesList() {
         when(placeRepository.findAll()).thenReturn(Arrays.asList(place));
@@ -48,11 +54,14 @@ class PlaceServiceImplTest {
 
     }
 
-   /* @Test
+@Test
     void testWhenCallGetAllPlacesByCategoryServiceReturnPlacesByCategoryList() {
-        when(placeRepository.findAllByCategory()).thenReturn(categoryList);
+       when(placeRepository.findAllByCategory(category)).thenReturn(List.of(place));
+       assertThat(placeService.getAllPlacesByCategory(category).size(),equalTo(1));
 
-    }*/
+    }
+
+
 
 
 }
