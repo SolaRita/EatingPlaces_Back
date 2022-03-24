@@ -25,7 +25,6 @@ class PlaceRepositoryTest {
 
     @Test
     void findAllPlacesReturnsAllPlacesList(){
-
         var place = new Place();
         entityManager.persist(place);
         entityManager.flush();
