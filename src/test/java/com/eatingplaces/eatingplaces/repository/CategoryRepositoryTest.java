@@ -1,12 +1,13 @@
 package com.eatingplaces.eatingplaces.repository;
-
 import com.eatingplaces.eatingplaces.model.Category;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+
+
 @DataJpaTest
 class CategoryRepositoryTest {
     @Autowired
@@ -14,9 +15,17 @@ class CategoryRepositoryTest {
     @Autowired
     CategoryRepository categoryRepository;
 
-
-
     @Test
+    void findAllCategoiesReturnsAllCategoriesList(){
+        var category = new Category();
+        entityManager.persist(category);
+        entityManager.flush();
+        assertEquals(1, categoryRepository.findAll().size());
+
+
+    }
+
+    /*@Test
     void findAllCategoiesReturnsAllCategoriesList(){
         var category1 = new Category(1L,"asian");
         var category2 = new Category(2L,"mexican");
@@ -26,10 +35,7 @@ class CategoryRepositoryTest {
         assertEquals(2, categoryRepository.findAll().size());
 
 
-
-
-
-    }
+    }*/
 
 
 }

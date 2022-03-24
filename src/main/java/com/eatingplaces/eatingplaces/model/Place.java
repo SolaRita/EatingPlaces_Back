@@ -1,18 +1,23 @@
 package com.eatingplaces.eatingplaces.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Data
+
 public class Place {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
 
     private Long id;
-    @Column (nullable = false)
+
     private String name;
     @ManyToOne
     private City city;
