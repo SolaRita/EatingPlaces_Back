@@ -12,9 +12,7 @@ public class PlaceServiceImpl implements PlaceService {
     private PlaceRepository placeRepository;
 
     @Override
-    public Place savePlace(Place place) {
-       return placeRepository.save(place);
-    }
+    public Place savePlace(Place place) {return placeRepository.save(place);}
 
     @Override
     public List<Place> getAllPlaces(){return placeRepository.findAll();}
