@@ -40,8 +40,8 @@ class PlaceRepositoryTest {
  @Test
     void findAllByCategoryReturnsAllPlacesByCategory() {
         var category = new Category();
-
         var place = new Place();
+        place.addCategory(category);
         entityManager.persist(place);
         entityManager.persist(category);
         entityManager.flush();

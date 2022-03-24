@@ -12,6 +12,7 @@ class PlaceTest {
     void PlaceHaveId(){
      Place place = new Place();
      assertThat(place,hasProperty("id"));
+
     }
 
 

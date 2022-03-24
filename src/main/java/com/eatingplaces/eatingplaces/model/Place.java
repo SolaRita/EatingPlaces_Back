@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -15,14 +16,12 @@ import java.util.List;
 public class Place {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-
     private Long id;
-
     private String name;
     @ManyToOne
     private City city;
     @ManyToMany
-    private List<Category> category;
+    private List<Category> category = new ArrayList<>();
     private String shortDescription;
     private String longDescription;
     private String district;
@@ -30,7 +29,12 @@ public class Place {
     private String doNotMiss;
     private String highlight;
 
+
+    public void addCategory(Category category){
+        this.category.add(category);
     }
+    }
+
 
 
 
