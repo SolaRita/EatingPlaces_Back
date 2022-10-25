@@ -11,6 +11,10 @@ public class PlaceServiceImpl implements PlaceService {
     @Autowired
     private PlaceRepository placeRepository;
 
+    public PlaceServiceImpl(PlaceRepository placeRepository) {
+        this.placeRepository = placeRepository;
+    }
+
     @Override
     public Place savePlace(Place place) {return placeRepository.save(place);}
 

@@ -1,4 +1,5 @@
 package com.eatingplaces.eatingplaces.controller;
+
 import com.eatingplaces.eatingplaces.model.Category;
 import com.eatingplaces.eatingplaces.model.Place;
 import com.eatingplaces.eatingplaces.service.CategoryService;
@@ -26,11 +27,12 @@ public class CategoryController {
     }
 
     @GetMapping("/{id}")
-    public Category getCategoryById(@PathVariable Long id){
+    public Category getCategoryById(@PathVariable Long id) {
         return categoryService.getCategoryById(id);
     }
 
     @GetMapping("/{category}/places")
-    public List<Place>getAllPlacesByCategory(@PathVariable Category category) {return placeService.getAllPlacesByCategory(category);
+    public List<Place> getAllPlacesByCategory(@PathVariable Category category) {
+        return placeService.getAllPlacesByCategory(category);
     }
 }

@@ -11,11 +11,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/places")
 
+
 @CrossOrigin
 public class PlaceController {
 
     @Autowired()
     private PlaceService placeService;
+
+    public PlaceController(PlaceService placeService) {
+        this.placeService = placeService;
+    }
 
     @PostMapping("")
     public String add(@RequestBody Place place) {
