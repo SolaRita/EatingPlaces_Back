@@ -21,6 +21,10 @@ public class CategoryController {
     @Autowired()
     private PlaceService placeService;
 
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
+
     @GetMapping("")
     public List<Category> getAllCategories() {
         return categoryService.getAllCategories();
