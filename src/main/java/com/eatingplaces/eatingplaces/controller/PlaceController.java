@@ -38,6 +38,12 @@ public class PlaceController {
         return placeService.getPlaceById(id);
     }
 
+    @GetMapping("/{category}")
+    public List<Place> getAllPlacesByCategory(@PathVariable Category category){
+        return placeService.getAllPlacesByCategory(category);
+    }
+
+
 
 }
 

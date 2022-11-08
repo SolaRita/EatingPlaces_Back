@@ -30,6 +30,8 @@ public class Place {
     private String highlight;
 
 
+
+
     public void addCategory(Category category){
         this.category.add(category);
     }

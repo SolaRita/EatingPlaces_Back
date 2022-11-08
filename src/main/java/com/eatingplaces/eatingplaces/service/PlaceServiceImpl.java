@@ -22,10 +22,12 @@ public class PlaceServiceImpl implements PlaceService {
     public List<Place> getAllPlaces(){return placeRepository.findAll();}
 
     @Override
-    public Place getPlaceById(Long id) {return placeRepository.findById(id).get();}
+    public Place getPlaceById(Long id) {
+        return placeRepository.getById(id);}
 
     @Override
-    public List<Place> getAllPlacesByCategory(Category category){return placeRepository.findAllByCategory(category);}
+    public List<Place> getAllPlacesByCategory(Category category){
+        return placeRepository.findAllByCategory(category);}
 
 
 }
